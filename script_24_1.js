@@ -60,3 +60,4 @@ function Taxmin_Oyin() {
     alert("Afsuski siz yutqazdingiz");
   } else alert("Natija durrang");
 }
+console.log("here");
