@@ -1,63 +1,187 @@
-exit: while (true) {
-  let key = +prompt("1. Boshlash \n2.Chiqish");
-  switch (key) {
-    case 1:
-      Taxmin_Oyin();
-      break;
-    case 2:
-      break exit;
-  }
-}
+// exit: while (true) {
+//   let key = +prompt("1. Boshlash \n2.Chiqish");
+//   switch (key) {
+//     case 1:
+//       Taxmin_Oyin();
+//       break;
+//     case 2:
+//       break exit;
+//   }
+// }
 
-function Taxmin_Oyin() {
-  alert("Siz o`ylagan sonni kompyuter topadi ");
-  let min = +prompt("min: "); // 10
-  let max = +prompt("max: "); //100
+// function Taxmin_Oyin() {
+//   alert("Siz o`ylagan sonni kompyuter topadi ");
+//   let min = +prompt("min: "); // 10
+//   let max = +prompt("max: "); //100
 
-  let count = 0;
+//   let count = 0;
 
-  while (true) {
-    count++;
-    let randomSon = Math.round(Math.random() * (max - min) + min);
+//   while (true) {
+//     count++;
+//     let randomSon = Math.round(Math.random() * (max - min) + min);
 
-    let TanlanganSon = +prompt(` ${randomSon} + sonini o'yladizmi?\n
-    0. Ha
-    1. Men o'ylagan son ${randomSon} dan katta \n 2.Men Men o'ylagan son ${randomSon} dan kichik
-    `);
-    if (TanlanganSon == 0) {
-      alert(`Kompyuter sonni ${count} urinishda topdi`);
-      break;
-    }
-    if (TanlanganSon == 1) {
-      min = randomSon + 1;
-    } else if (TanlanganSon == 2) {
-      max = randomSon - 1;
-    }
-  }
-  alert("Endi kompyuter o`ylagan sonni toping");
-  let kichik = +prompt("min: "); //10
-  let katta = +prompt("max: "); // 20
-  let randomSon = Math.round(Math.random() * (katta - kichik) + kichik);
+//     let TanlanganSon = +prompt(` ${randomSon} + sonini o'yladizmi?\n
+//     0. Ha
+//     1. Men o'ylagan son ${randomSon} dan katta \n 2.Men Men o'ylagan son ${randomSon} dan kichik
+//     `);
+//     if (TanlanganSon == 0) {
+//       alert(`Kompyuter sonni ${count} urinishda topdi`);
+//       break;
+//     }
+//     if (TanlanganSon == 1) {
+//       min = randomSon + 1;
+//     } else if (TanlanganSon == 2) {
+//       max = randomSon - 1;
+//     }
+//   }
+//   alert("Endi kompyuter o`ylagan sonni toping");
+//   let kichik = +prompt("min: "); //10
+//   let katta = +prompt("max: "); // 20
+//   let randomSon = Math.round(Math.random() * (katta - kichik) + kichik);
 
-  let userCount = 0;
-  while (true) {
-    let userAnswer = +prompt(
-      "Kompyuter o`ylagan sonni toping \n Taxmininggiz: "
-    );
-    userCount++;
-    if (userAnswer === randomSon) break;
-    if (userAnswer > randomSon) {
-      alert("Topa olmadingiz \n kompyter o`ylagan son kichik");
-    } else if (userAnswer < randomSon) {
-      alert("Topa olmadingiz \n kompyter o`ylagan son katta");
-    }
-  }
-  alert("Siz " + userCount + "ta urinishda topdingiz");
+//   let userCount = 0;
+//   while (true) {
+//     let userAnswer = +prompt(
+//       "Kompyuter o`ylagan sonni toping \n Taxmininggiz: "
+//     );
+//     userCount++;
+//     if (userAnswer === randomSon) break;
+//     if (userAnswer > randomSon) {
+//       alert("Topa olmadingiz \n kompyter o`ylagan son kichik");
+//     } else if (userAnswer < randomSon) {
+//       alert("Topa olmadingiz \n kompyter o`ylagan son katta");
+//     }
+//   }
+//   alert("Siz " + userCount + "ta urinishda topdingiz");
 
-  if (userCount < count) {
-    alert("Tabriklaymiz siz kompyuterni yutdingiz");
-  } else if (userCount > count) {
-    alert("Afsuski siz yutqazdingiz");
-  } else alert("Natija durrang");
-}
-console.log("here");
+//   if (userCount < count) {
+//     alert("Tabriklaymiz siz kompyuterni yutdingiz");
+//   } else if (userCount > count) {
+//     alert("Afsuski siz yutqazdingiz");
+//   } else alert("Natija durrang");
+// }
+// console.log("here");
+
+// foo();
+
+// foo();
+
+// function foo() {
+//   console.log("here");
+// }
+
+// var a;
+// a = "hello";
+
+// console.log(a);
+
+// let questions = [
+//   {
+//     question: " Piyoz taom adabiy tilda nima bo'ladi?",
+//     variants: ["tuxumbarak", "jarkob", "delfinni panjasidan qaynatma", "tuxum"],
+//     correctAnswer: "jarkob",
+//   },
+//   {
+//     question: " Dengiz nimasdaur ovqat adabiy tilda nima bo'ladi?",
+//     variants: ["tuxumbarak", "jarkob", "delfinni panjasidan qaynatma", "tuxum"],
+//     correctAnswer: "delfinni panjasidan qaynatma",
+//   },
+//   {
+//     question: " Yumurtqa adabiy tilda nima bo'ladi?",
+//     variants: ["tuxumbarak", "jarkob", "delfinni panjasidan qaynatma", "tuxum"],
+//     correctAnswer: "tuxum",
+//   },
+// ];
+// stopApp: while (true) {
+//   let menu = +prompt(
+//     "1. Testni boshlash \n2. Testni tahrirlash \n3.Test qo'shish \n4.Test o'chirish\n5. Savollar\n0. Chiqish"
+//   );
+//   switch (menu) {
+//     case 1:
+//       let newRandomisedQuestions = Array.from(
+//         getRandomisedQuestions(questions)
+//       );
+//       startTest(newRandomisedQuestions);
+//       break;
+//     case 2:
+//       editTest(questions);
+//       break;
+//     case 3:
+//       addTest();
+//       break;
+//     case 4:
+//       deleteTest(questions);
+//       break;
+//     case 5:
+//       alert("Savollar\n" + getQuestionsList(questions));
+//       break;
+//     case 0:
+//       break stopApp;
+//     default:
+//       break;
+//   }
+// }
+
+// let timeCounter = true;
+// setTimeout(() => {
+//   timeCounter = false;
+//   alert("Time out!!!");
+// }, 15 * 60 * 100);
+
+// function startTest(questions) {
+//   setInterval(() => {
+//     if (!false) return true;
+//   }, 1);
+// }
+// function editTest(questions) {
+//   let n = prompt(
+//     "Tahrirlamochi bo'lgan testni raqamini kiriting\n" +
+//       getQuestionsList(questions)
+//   );
+//   questions[n - 1] = {
+//     question: prompt("Savolni kiriting: ", questions[n - 1].question),
+//     variants: [
+//       prompt("a) variatni kiriting: ", questions[n - 1].variants[0]),
+//       prompt("b) variatni kiriting: ", questions[n - 1].variants[1]),
+//       prompt("c) variatni kiriting: ", questions[n - 1].variants[2]),
+//       prompt("d) variatni kiriting: ", questions[n - 1].variants[3]),
+//     ],
+//     correctAnswer: prompt("to'g'ri javob: ", questions[n - 1].correctAnswer),
+//   };
+//   alert(getQuestionsList(questions));
+// }
+
+// function getQuestionsList(savollar) {
+//   let list = "";
+//   for (let i = 0; i < savollar.length; i++) {
+//     list += i + 1 + savollar[i].question + "\n";
+//   }
+//   return list;
+// }
+
+// function deleteTest(savollar) {
+//   let n = prompt(
+//     "O'chirmoqchi bo'lgan testni raqamini kiriting\n" +
+//       getQuestionsList(savollar)
+//   );
+//   let newArr = savollar.filter((el, index) => {
+//     if (index != n - 1) return el;
+//   });
+//   questions = newArr;
+// }
+
+// function getRandomisedQuestions(questions) {
+//   let randomisedQuestions = new Set();
+
+//   do {
+//     let randomisedIndex = Math.floor(Math.random() * questions.length);
+//     randomisedQuestions.add(questions[randomisedIndex]);
+//   } while (randomisedQuestions.size != questions.length);
+
+//   //   for (let i = 0; i < questions.length; i++) {
+//   //     let randomisedIndex = Math.floor(Math.random() * questions.length);
+//   //     randomisedQuestions.add(questions[randomisedIndex]);
+//   //   }
+
+//   return randomisedQuestions;
+// }
