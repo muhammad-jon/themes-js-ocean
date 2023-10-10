@@ -28,11 +28,13 @@ function nextTest() {
   if (currentTest == savollar.length - 1) currentTest = savollar.length - 1;
   else currentTest++;
   generateTest(currentTest);
+  clearChecked();
 }
 function prevText() {
   if (currentTest == 0) currentTest = 0;
   else currentTest--;
   generateTest(currentTest);
+  clearChecked();
 }
 
 function generateTest(k) {
@@ -42,3 +44,10 @@ function generateTest(k) {
   }
 }
 generateTest(currentTest);
+
+function clearChecked() {
+  let inputs = document.querySelectorAll("input");
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].checked = false;
+  }
+}
