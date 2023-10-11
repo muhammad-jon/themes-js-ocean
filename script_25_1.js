@@ -143,3 +143,78 @@
 // }
 
 // console.log(b.innerHTML);
+
+// let belgi = prompt("Belgi kiriting: ");
+
+// switch (true) {
+//   case belgi >= 'A' && belgi <= 'Z':
+//     alert("Katta harf");
+//     break;
+//   case belgi >= 'a' && belgi <= 'z':
+//     alert("Kichik harf");
+//     break;
+//   case belgi >= '0' && belgi <= '9':
+//     alert("Raqam");
+//     break;
+//   default:
+//     alert("Belgi");
+//     break;
+// }
+
+// let mahsulotlar = [
+//   { nomi: "Olma", narxi: 5000 },
+//   { nomi: "Anor", narxi: 7000 },
+//   { nomi: "Shaftoli", narxi: 6000 },
+//   { nomi: "Nok", narxi: 4000 },
+// ];
+// console.log("Mahsulotlar ro'yxati:");
+// for (let i = 0; i < mahsulotlar.length; i++) {
+//   console.log(${i + 1}. ${mahsulotlar[i].nomi} - ${mahsulotlar[i].narxi} so'm);
+// }
+// let tanlov = prompt("Buyurtma uchun mahsulot raqamini kiriting:");
+// let tanlanganMahsulot = mahsulotlar[tanlov - 1];
+// let buyurtmaSoni = prompt("Buyurtma sonini kiriting:");
+// let umumiyNarx;
+// switch (tanlov) {
+//   case "1":
+//   case "2":
+//   case "3":
+//   case "4":
+//     umumiyNarx = tanlanganMahsulot.narxi * buyurtmaSoni;
+//     console.log(Tanlangan mahsulot: ${tanlanganMahsulot.nomi});
+//     console.log(Buyurtma soni: ${buyurtmaSoni});
+//     console.log(Umumiy narx: ${umumiyNarx} so'm);
+//     break;
+//   default:
+//     console.log("Noto'g'ri tanlov");
+//     break;
+// }
+
+// let products = ["olma", "anor", "shaptoli", "qoqi"];
+let umumiySumma = 0;
+
+tugash: while (true) {
+  let n = +prompt(
+    "1. Olma, \n2.Anor\n3.Behi\n4.Shaptoli\n 0. Bozordan chiqish"
+  )[0];
+  switch (n) {
+    case 1:
+      umumiySumma += 15000;
+      break;
+    case 2:
+      umumiySumma += 25000;
+      break;
+    case 3:
+      umumiySumma += 18000;
+      break;
+    case 4:
+      umumiySumma += 45000;
+      break;
+    case 0:
+      break tugash;
+    default:
+      alert("bunday maxsulot yo'q");
+  }
+}
+
+alert("Umumiy summa :" + umumiySumma);
