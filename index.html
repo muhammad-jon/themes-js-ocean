@@ -3,141 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-    <!-- <style>
-
-    </style>
-    <link rel="stylesheet" href=""> -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Arial Rounded MT Bold", "Chalkboard", sans-serif;
-        }
-
-        body {
-            background-color: rgb(140, 221, 127);
-        }
-
-        .wrapper {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .container {
-            padding: 1rem;
-            width: 100%;
-            margin: 0 auto;
-            max-width: 70vw;
-            background-color: white;
-            border-radius: 20px;
-            border: 1px solid lightblue;
-
-        }
-
-        .container .question {
-            margin: 1rem 0;
-        }
-
-        .container h1 {
-            text-align: center;
-            border-bottom: 8px solid #ab97db;
-            border-top: 8px solid #ab97db;
-            border-top-style: double;
-            border-bottom-style: double;
-        }
-
-        .answers input {
-            display: none;
-        }
-
-        .answers input:checked+label li {
-            background-color: lightgray;
-        }
-
-        .answers {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            list-style: none;
-        }
-
-        .answers input+label li {
-            border: 1px solid lightgray;
-            padding: 1rem 2rem;
-            border-radius: 1rem;
-            cursor: pointer;
-        }
-
-        .test_footer {
-            padding: 1rem 0;
-        }
-
-        .test_footer button {
-            padding: 0.4rem 0.8rem;
-            background-color: #ab97db;
-            border: none;
-            border-radius: 0.2rem;
-            cursor: pointer;
-        }
-    </style>
 </head>
 
-
 <body>
+    <style>
+        .del {
+            text-decoration: line-through;
+        }
+    </style>
 
-    <div class="wrapper">
-        <div class=" container">
-            <h1>UserName</h1>
-            <div class="question">
-                <h2 class="question_text">
-                    Lorem ipsum dolor sit amet.
-                </h2>
-            </div>
-            <ul class="answers">
-                <input type="radio" id="answer-1" name="answer">
-                <label for="answer-1">
-                    <li class="answer">Lorem ipsum dolor sit amet consectetur.</li>
-                </label>
-                <input type="radio" id="answer-2" name="answer">
-                <label for="answer-2">
-                    <li class="answer">Lorem ipsum dolor sit amet consectetur.</li>
-                </label>
-                <input type="radio" id="answer-3" name="answer">
-                <label for="answer-3">
-                    <li class="answer">Lorem ipsum dolor sit amet consectetur.</li>
-                </label>
-                <input type="radio" id="answer-4" name="answer">
-                <label for="answer-4">
-                    <li class="answer">Lorem ipsum dolor sit amet consectetur.</li>
-                </label>
-            </ul>
-            <div class="test_footer">
-                <button onclick="prevText()">Prev test</button>
-                <button onclick="nextTest()">Next test</button>
-            </div>
-        </div>
+    <h1 class="del">Bozoroga borish kk</h1>
+    <button onclick="(e)=>toggleClass(e);">Borildi/ Borilmadi</button>
+    <div class="todos">
+        <input type="checkbox" style="transform: scale(3);" value="">
+        <div class="result"></div>
+        <button onclick="clearInterval(interval)">get</button>
+        <ul>
 
-
-
-
-        <!-- 1. ishlar
-        2. Tugallangalari
-        3. Tuglallanmaganlari
-        4. Todo qo'shish
-        5. To do ni edit qilish -->
-
+        </ul>
     </div>
-    <script src="./script_26_2.js">
 
-    </script>
+    <script src="./script_27_1.js"></script>
 </body>
 
 </html>

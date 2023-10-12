@@ -49,53 +49,82 @@ let todosData = [
   },
 ];
 
-function menu() {
-  finish: while (true) {
-    let menuId = +prompt(
-      `1. Ishlar ro'yxati \n2. Bajarilmagan ishlar ro'yxati\n3. Tugallangan ishlar ro'yxati \n0. Chiqish`
-    )[0];
-    switch (menuId) {
-      case 1:
-        alert(getTodoList(todosData));
-        break;
-      case 2:
-        unfinishedTodos(todosData);
-      case 3:
-        finishedTodos(todosData);
-      case 0:
-        break finish;
-    }
-  }
-}
-menu();
+// function menu() {
+//   finish: while (true) {
+//     let menuId = +prompt(
+//       `1. Ishlar ro'yxati \n2. Bajarilmagan ishlar ro'yxati\n3. Tugallangan ishlar ro'yxati \n0. Chiqish`
+//     )[0];
+//     switch (menuId) {
+//       case 1:
+//         alert(getTodoList(todosData));
+//         break;
+//       case 2:
+//         unfinishedTodos(todosData);
+//       case 3:
+//         finishedTodos(todosData);
+//       case 0:
+//         break finish;
+//     }
+//   }
+// }
+// menu();
+
+// function getTodoList(todos) {
+//   let list = "";
+//   for (let i = 0; i < todos.length; i++) {
+//     list += "ID: " + todos[i].id + " | " + todos[i].title + "\n";
+//   }
+//   return list;
+// }
+// function unfinishedTodos(todos) {
+//   let unfinished = todos.filter((el) => {
+//     return el.completed === false;
+//   });
+//   let todoId = +prompt(
+//     getTodoList(unfinished) +
+//       "\nBajarilganligini o'zgartirish uchun id sini kiriting:"
+//   );
+//   for (let i = 0; i < todosData.length; i++) {
+//     if (todosData[i].id == todoId) {
+//       todosData[i].completed = confirm("Bajarildimi?");
+//     }
+//   }
+//   menu();
+// }
+// function finishedTodos(todos) {
+//   let finished = todos.filter((el) => el.completed === true);
+//   alert(getTodoList(finished));
+//   menu();
+// }
+// function addTodo() {}
+// function editTodo() {}
+// function deleteTodo() {}
 
 function getTodoList(todos) {
   let list = "";
   for (let i = 0; i < todos.length; i++) {
-    list += "ID: " + todos[i].id + " | " + todos[i].title + "\n";
+    list += `<li>ID: ${todos[i].id}) ${todos[i].title} </li>`;
   }
+  console.log(list);
   return list;
 }
-function unfinishedTodos(todos) {
-  let unfinished = todos.filter((el) => {
-    return el.completed === false;
-  });
-  let todoId = +prompt(
-    getTodoList(unfinished) +
-      "\nBajarilganligini o'zgartirish uchun id sini kiriting:"
-  );
-  for (let i = 0; i < todosData.length; i++) {
-    if (todosData[i].id == todoId) {
-      todosData[i].completed = confirm("Bajarildimi?");
-    }
+
+let ul = document.querySelector("ul");
+ul.innerHTML = getTodoList(todosData);
+
+let h1 = document.querySelector("h1");
+
+function toggleClass() {
+  h1.classList.remove("del");
+}
+let last = "";
+function changed() {
+  if (last == document.querySelector("input").value) return;
+  else {
+    last = document.querySelector("input").value;
+    document.querySelector(".result").innerText = last;
+
+    console.log(document.querySelector("input").value);
   }
-  menu();
 }
-function finishedTodos(todos) {
-  let finished = todos.filter((el) => el.completed === true);
-  alert(getTodoList(finished));
-  menu();
-}
-function addTodo() {}
-function editTodo() {}
-function deleteTodo() {}
+let interval = setInterval(() => changed(), 100);
