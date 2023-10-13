@@ -67,3 +67,14 @@ data.sort(function (a, b) {
 });
 
 console.log(data);
+
+function captain(number1, number2) {
+  let son1 = number1 * number1;
+  let son2 = number2 * number2;
+
+  return son1 + son2;
+}
+
+let a = prompt("");
+let b = prompt("");
+alert(captain(a, b));
