@@ -5,13 +5,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 </head>
 
 <body>
+    <!-- <style>
+        .container {
+            width: 400px;
+            height: 400px;
+            background-color: lightgray;
+        }
 
-    <div id="root"></div>
+        #ball {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: green;
+            transition: transform 0.4s linear;
+        }
+    </style> -->
 
-    <script src="./script_27_2.js"></script>
+    <!-- <div class="container" id="poll">
+        <div id="ball"></div>
+    </div> -->
+    <!-- <script>
+        poll.onclick = function (event) {
+            console.log(event.clientX + ":" + event.clientY);
+            ball.style.transform = `translate(${event.clientX - 25 * Math.sqrt(2)}px , ${event.clientY - 25 * Math.sqrt(2)}px)`
+        }
+    </script> -->
+    <!-- <style>
+        .maydon {
+            width: 1000px;
+            height: 667px;
+            background-image: url("https://as1.ftcdn.net/v2/jpg/02/93/04/16/1000_F_293041614_BLH7R4TmtV2MpYZrG1drQeGGUQVWV9nX.jpg");
+        }
+
+        .ball {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-size: cover;
+            background-image: url("https://www.freeiconspng.com/thumbs/soccer-ball-png/football-soccer-ball-clip-art-png-7.png");
+        }
+    </style> -->
+    <!-- <div class="maydon">
+        <div class="ball">
+
+        </div>
+    </div> -->
+    <!-- <input type="text">
+    <div id=" root"></div>
+    <script>
+        let input = document.querySelector("input")
+        input.addEventListener("keypress", function () {
+            console.log("bosib turilibdi");
+        })
+        input.addEventListener("keyup", function (event) {
+
+            // console.log(event.key);
+            if (event.key == "Enter") {
+                let div = document.createElement("div")
+                div.textContent = input.value;
+                document.body.appendChild(div)
+                input.value = ""
+            }
+        })
+    </script> -->
+    <style>
+        .carousel {
+            width: 500px;
+            height: 300px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .carousel-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: block;
+            color: white;
+            font-size: 50px;
+            width: 500px;
+            height: 100%;
+            background-color: blue;
+            /* border: 1px solid red; */
+        }
+
+        .carousel div {
+            display: flex;
+        }
+    </style>
+    <div class="carousel">
+        <div id="carousel_items">
+            <div class="carousel-item">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ipsa ipsam amet fugiat voluptas aperiam,
+                sequi quam eveniet, dolor at dolorem quis dolore voluptate recusandae esse, nobis quod pariatur
+                consectetur!
+            </div>
+            <div class="carousel-item">2</div>
+            <div class="carousel-item">3</div>
+            <div class="carousel-item">4</div>
+        </div>
+    </div>
+    <div>
+        <button id="left">Left</button>
+        <button id="right">Right</button>
+    </div>
+    <script src="./script_29_2.js"></script>
 </body>
 
 </html>
