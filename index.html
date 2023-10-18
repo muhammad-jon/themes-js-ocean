@@ -72,7 +72,7 @@
             }
         })
     </script> -->
-    <style>
+    <!-- <style>
         .carousel {
             width: 500px;
             height: 300px;
@@ -113,7 +113,148 @@
         <button id="left">Left</button>
         <button id="right">Right</button>
     </div>
-    <script src="./script_29_2.js"></script>
+    <script src="./script_29_2.js"></script> -->
+
+    <!-- <style>
+        .accardion {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .accordion-item>div {
+            padding: 1rem;
+            background-color: gray;
+        }
+
+        .show-hide {
+            display: none;
+        }
+    </style>
+    <div class="accardion">
+
+        <div class="accordion-item">
+
+            <div id="item" style="cursor: pointer; display: flex; align-items:center; justify-content: space-between;">
+                <h3>
+
+                    Bu yerda mavzu bo'ladi
+                </h3>
+                <h1 id="minus">-</h1>
+                <h1 id="plus" class="show-hide">+</h1>
+            </div>
+            <p id="info">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum porro molestiae pariatur tenetur
+                eos
+                dolorem nostrum quam at. Laudantium, provident voluptate corrupti nisi distinctio optio ab eius porro
+                perferendis voluptatibus?
+            </p>
+        </div>
+    </div>
+    <script>
+        let item = document.querySelector("#item");
+        item.onclick = function () {
+
+            info.classList.toggle("show-hide")
+            minus.classList.toggle("show-hide")
+            plus.classList.toggle("show-hide")
+        }
+    </script>
+
+    <style>
+
+    </style> -->
+
+
+
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+
+        .buttons {
+            max-width: 200px;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        .buttons a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: yellow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .wrapper {
+            margin: 0 auto;
+            border: 1px solid green;
+            max-width: 600px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            align-items: center;
+        }
+
+        .carousel-item {
+            width: 600px;
+            height: 400px;
+            background-color: red;
+        }
+    </style>
+
+    <div>
+
+    </div>
+
+    <div class="buttons">
+        <a href="#item-1">1</a>
+        <a href="#item-2">2</a>
+        <a href="#item-3">3</a>
+        <a href="#item-4">4</a>
+    </div>
+
+    <div class="wrapper">
+        <div class="carousel">
+
+            <div id="item-1" class="carousel-item">
+                1
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore placeat ea voluptatem, expedita
+                pariatur quos, similique corrupti omnis laudantium veritatis aliquam doloremque adipisci sed dolore
+                nostrum nam repellendus ducimus quasi.
+            </div>
+            <div id="item-2" class="carousel-item">
+                2
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum officiis necessitatibus fugit
+                adipisci facilis, ea culpa! Ipsam, quae vero earum voluptatem voluptas rem unde corrupti magni
+                maiores magnam similique temporibus.
+            </div>
+            <div id="item-3" class="carousel-item">
+                3
+
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam eum, obcaecati cupiditate ut dolorum
+                laudantium deleniti numquam vel commodi odit sint facilis magni nulla, nostrum quo cumque atque
+                praesentium? Voluptatem.
+            </div>
+            <div id="item-4" class="carousel-item">
+                4
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam eum, obcaecati cupiditate ut dolorum
+                laudantium deleniti numquam vel commodi odit sint facilis magni nulla, nostrum quo cumque atque
+                praesentium? Voluptatem.
+            </div>
+        </div>
+    </div>
+
+    <script src="./script_30_1.js"></script>
+
 </body>
 
 </html>
