@@ -75,6 +75,7 @@ stop: while (true) {
     "2. Testni tahrirlash",
     "3. Testni qo'shish",
     "4. Testni o'chirish",
+    "5. Testlar ro'yxati",
     "0. Chiqish",
   ];
   let n = +prompt(menu.join("\n"));
@@ -91,6 +92,21 @@ stop: while (true) {
     case 4:
       deleteTest(data.questions);
       break;
+    case 5:
+      let n = prompt(getQuestionsList(data.questions));
+      if (n) {
+        alert(
+          "Savol " +
+            data.questions[n - 1].question +
+            "\n" +
+            "Javoblar " +
+            data.questions[n - 1].answers +
+            "\n" +
+            "To'g'ri javob " +
+            data.questions[n - 1].correct_answer
+        );
+      }
+      break;
     case 0:
       break stop;
     default:
@@ -98,7 +114,61 @@ stop: while (true) {
   }
 }
 
+function getQuestionsList(questions) {
+  let list = "";
+  for (let index = 0; index < questions.length; index++) {
+    list += index + 1 + ") " + questions[index].question + "\n";
+  }
+  return list;
+}
+
 function startTest(questions) {}
-function editTest(questions) {}
-function addTest(questions) {}
-function deleteTest(questions) {}
+
+function editTest(questions) {
+  let n = +prompt(
+    "Tahrirlamoqchi bo'lgan savol raqamini kiriting\n\n" +
+      getQuestionsList(questions)
+  );
+  questions[n - 1].question = prompt(
+    "Savolini o'zgaritiring",
+    questions[n - 1].question
+  );
+  [...questions[n - 1].answers] = [
+    prompt("a:", questions[n - 1].answers[0]),
+    prompt("b:", questions[n - 1].answers[1]),
+    prompt("c:", questions[n - 1].answers[2]),
+    prompt("d:", questions[n - 1].answers[3]),
+  ];
+  questions[n - 1].correct_answer = prompt(
+    "To'g'ri javob: ",
+    questions[n - 1].correct_answer
+  );
+  alert("Muvoffaqiyatli tahrirlandi");
+}
+
+function addTest(questions) {
+  const question = prompt("Savolni kiriting: ");
+  const a = prompt("1-varianti kiriting: ");
+  const b = prompt("2-varianti kiriting: ");
+  const c = prompt("3-varianti kiriting: ");
+  const d = prompt("4-varianti kiriting: ");
+  const correct_answer = prompt("To'g'ri javobi kiriting");
+
+  const quizItem = {
+    number: questions.length + 1,
+    question: question,
+    answers: [a, b, c, d],
+    correct_answer: correct_answer,
+  };
+  questions.push(quizItem);
+  alert("Savolingiz qo'shildi!!!");
+}
+
+function deleteTest(questions) {
+  let n = +prompt(
+    "O'chirmoqchi bo'lgan savol raqamini kiriting\n\n" +
+      getQuestionsList(questions)
+  );
+  questions.splice(n - 1, 1);
+  alert(n + "-Savol o'chirildi");
+}
