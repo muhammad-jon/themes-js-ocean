@@ -1,3 +1,5 @@
+"use strict";
+
 const questions = [
   {
     number: 1,
@@ -73,7 +75,7 @@ const questions = [
     answers: [
       "Tenglikni tekshirish uchun",
       "Teng emasligni tekshirish uchun",
-      "Katta yoki tenglikni tekshirish uchun",
+      "Kichik yoki tenglikni tekshirish uchun",
       "Katta yoki tenglikni tekshirish uchun",
     ],
     correct_answer: "Tenglikni tekshirish uchun",
@@ -561,6 +563,8 @@ const questions = [
   },
 ];
 
+let uncorrect = "";
+
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
@@ -586,17 +590,17 @@ document.onkeydown = (e) => {
   }
 };
 
-let beat = new Audio("./emergency.mp3");
-beat.autoplay = true;
+// let beat = new Audio("./emergency.mp3");
+// beat.autoplay = true;
 
 let countLeaves = 0;
 document.addEventListener("visibilitychange", (e) => {
   if (document.visibilityState === "visible") {
     console.log("user kirdi");
-    beat.pause();
+    // beat.pause();
   } else {
     countLeaves++;
-    beat.play();
+    // beat.play();
     // alert("Boshqa sitega o'tishga harakat qilinmoqda");
   }
 });
@@ -606,7 +610,7 @@ let stopApp = true;
 let ismingiz = null;
 while (stopApp) {
   let a = +prompt("1.Testni boshlash \n  0.Chiqish");
-
+  console.log("dsadsads");
   switch (a) {
     case 1:
       ismingiz = prompt("Ismingizni kiriting:");
@@ -620,14 +624,7 @@ while (stopApp) {
       alert("Menyudagi sonlardan birini tanlang!");
   }
 }
-// function randonTest(questions) {
-// for (let i = 0; i < questions.length; i++) {
-//   let randomIndex = Math.floor(Math.random() * questions.length);
-//   questions[randomIndex];
-//   console.log(questions[randomIndex]);
-// }
-// return randomIndex;
-// }
+
 function toVariant(arr) {
   let newArr = arr.map((el, i) => {
     return String.fromCharCode(65 + i) + ") " + el;
@@ -642,9 +639,7 @@ function randomisedQuestions(data) {
   let sttt = 0;
   let countQuestions = data.length;
   here: while (true) {
-    console.log(data);
     let index = Math.floor(Math.random() * countQuestions);
-    console.log(index);
     randomisedQuestionsSet.add(data[index]);
     sttt++;
     if (randomisedQuestionsSet.size == data.length) {
@@ -663,9 +658,7 @@ function startTest() {
   let counter = 0;
 
   for (let i = 0; i < randomised.length; i++) {
-    // console.log(Math.floor(Math.random() * randomised[i].answers.length));
     let randomVariants = randomisedQuestions(randomised[i].answers);
-    console.log(randomVariants);
     let userAnswer = prompt(
       i +
         1 +
@@ -675,23 +668,23 @@ function startTest() {
         toVariant(randomVariants).join("\n")
     );
     let n = userAnswer.toLowerCase().charCodeAt(0) - 97;
-    //                  51 === 51
-    if (randomVariants[n] == randomised[i].correctAnswer) {
+    console.log(userAnswer.toLowerCase());
+    if (randomVariants[n] == randomised[i].correct_answer) {
       ++counter;
-    }
-    if (n >= 4 && n < 0) {
-      alert("Mavjud bo'lmagan variantni tanladingiz!");
-      i--;
+      console.log(counter);
+    } else {
+      uncorrect += randomised[i].number + ", ";
     }
   }
 
+  console.log(":here");
   const endTime = new Date();
   const sarflanganVaqt = endTime - startTime;
   const message =
     ismingiz +
     ", siz: " +
     counter +
-    " ta savolga to`g`ri javob berdingiz" +
+    " ta savolga to`g`ri javob berdingiz " +
     "\n" +
     "Siz testdan olgan ballingiz: " +
     counter * 2.5 +
@@ -700,9 +693,8 @@ function startTest() {
     "Sizda mavjud imtiyoz indeksi: " +
     IELTS +
     "\n" +
-    "Sizning ummumiy to'plagan ballingiz: " +
-    counter * 2.5 * IELTS +
-    " ball" +
+    "Sizning noto'g'ri javoblaringiz: " +
+    uncorrect +
     "\n" +
     "Testni ishlash uchun ketgan vaqt: " +
     sarflanganVaqt +
@@ -727,59 +719,4 @@ function getQuestionsList(questions) {
     questionsLest += i + 1 + questions[i].question + "\n";
   }
   return questionsLest;
-}
-
-// Savolni taxrirlash funksiyasi
-function editTest(questions) {
-  let questionsLest =
-    "Taxrirlamoqchi bo'lgan savolni raqamini kiriting:\n" +
-    getQuestionsList(questions);
-
-  let editIndext = +prompt(questionsLest);
-  questions[editIndext - 1] = {
-    question: prompt("Savolni kiriting: ", questions[editIndext - 1].question),
-    answers: [
-      prompt("a) variantni kiriting: ", questions[editIndext - 1].answers[0]),
-      prompt("b) variantni kiriting: ", questions[editIndext - 1].answers[1]),
-      prompt("c) variantni kiriting: ", questions[editIndext - 1].answers[2]),
-      prompt("d) variantni kiriting: ", questions[editIndext - 1].answers[3]),
-    ],
-    correctAnswer: prompt(
-      "To'g'ri javobni kiriting",
-      questions[editIndext - 1].correctAnswer
-    ),
-  };
-}
-function deleteTest(data) {
-  // let questionNumber = +prompt(
-  //   "O'chirmoqchi bo'lgan savolni raqamini kiriting:\n" + getQuestionsList(data)
-  // );
-
-  // let newArr = data.filter((el, index) => index + 1 != questionNumber);
-  // questions = newArr;
-  let n = +prompt(
-    "O'chirmoqchi bo'lgan savolni raqamini kiriting:\n" + getQuestionsList(data)
-  );
-  questions.splice(n - 1, 1);
-  alert(n + "-Savol o'chirildi");
-}
-function addTest(data) {
-  // let questionsLest =
-  //   "Taxrirlamoqchi bo'lgan savolni raqamini kiriting:\n" +
-  //   getQuestionsList(questions);
-
-  const question = prompt("Savol kiriting");
-  const a = prompt("a) variantni kiriting: ");
-  const b = prompt("b) variantni kiriting: ");
-  const c = prompt("c) variantni kiriting: ");
-  const d = prompt("d) variantni kiriting: ");
-  const correctAnswer = prompt("To'g'ri javobni kiriting");
-  const quizItem = {
-    number: questions.length + 1,
-    question: question,
-    answers: [a, b, c, d],
-    correctAnswer: correctAnswer,
-  };
-  questions.push(quizItem);
-  alert("Savol qo'shildi!");
 }
