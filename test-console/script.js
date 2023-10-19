@@ -1,63 +1,563 @@
-let questions = [
+const questions = [
   {
-    question: "Quyidagilarning qaysi biri  yuqoriroq yuridik kuchga ega?",
-    variants: [
-      "Qonun",
-      "Vazirlar Mahkamsi qarori",
-      "Konstitsiya",
-      "Prezident farmoni",
+    number: 1,
+    question: "JavaScript (JS) tilida natija qanday konsolga chiqariladi?",
+    answers: ["print()", "console.log()", "output()", "show()"],
+    correct_answer: "console.log()",
+  },
+  {
+    number: 2,
+    question:
+      "JavaScript dasturlash tili qanday qatorlar (statements) yordamida bajariladi?",
+    answers: [
+      "Ixtiyori kalit so'zlar bilan",
+      "E'tibor so'zlar bilan",
+      "Agar-shart operatori bilan",
+      "Qatorni yakunlaydigan nukta bilan",
     ],
-    correctAnswer: "Konstitsiya",
+    correct_answer: "E'tibor so'zlar bilan",
   },
   {
-    question: "Pulning qaysi vazifasi narxning shakllanishi bilan bog’liq?",
-    variants: [
-      "Qiymat o'lchovi",
-      "Jamg'arma vositasi",
-      "To'lov vositasi",
-      "Muomala vositasi",
+    number: 3,
+    question: "JavaScriptda dastur sintaksi qanday tuziladi?",
+    answers: [
+      "Qattiq qoidalar bo'yicha",
+      "So'zlar tuzilishi",
+      "Qattiq ko'nikmalar",
+      "Barchasi to'g'ri",
     ],
-    correctAnswer: "Qiymat o'lchovi",
+    correct_answer: "Qattiq qoidalar bo'yicha",
   },
   {
-    question: "Axborot komunikatsiya texnologiyasi berilgan qatorni belgilang?",
-    variants: ["Kompyuter", "Suv", "Havo", "Yulduz"],
-    correctAnswer: "Kompyuter",
+    number: 4,
+    question: "JavaScriptda izohlarni qanday yozish mumkin?",
+    answers: ["// va /* */", "# va ##", "-- va ++", "/* */ va <>"],
+    correct_answer: "// va /* */",
   },
   {
-    question: "Eng katta juft soni belgilang?",
-    variants: ["10", "44", "999", "77"],
-    correctAnswer: "44",
+    number: 5,
+    question: "JavaScriptda o'zgaruvchilar qanday e'lon qilinadi?",
+    answers: [
+      "let, var, const",
+      "variable, var, let",
+      "x, y, z",
+      "const, function, if",
+    ],
+    correct_answer: "let, var, const",
   },
   {
-    question: "Juft sonlar qatorini toping?",
-    variants: ["17", "18", "21", "55"],
-    correctAnswer: "18",
+    number: 6,
+    question: "\"let\" orqali o'zgaruvchi qanday e'lon qilinadi JavaScriptda?",
+    answers: [
+      '"let a = 10;"',
+      '"variable x = 5;"',
+      '"const y = 3;"',
+      '"let(a) = 7;"',
+    ],
+    correct_answer: '"let a = 10;"',
   },
   {
-    question: "Toq soni toping?",
-    variants: ["16", "15", "18", "20"],
-    correctAnswer: "15",
+    number: 7,
+    question: 'JavaScriptda "const" o\'zgaruvchilar nima uchun ishlatiladi?',
+    answers: [
+      "O'zgaruvchi qiymatini o'zgartirish uchun",
+      "O'zgarmas qiymatni o'zlashtirish uchun",
+      "O'zgaruvchini o'z ichiga oladigan qurilmalar uchun",
+      "O'zgaruvchini o'z ichiga olish uchun",
+    ],
+    correct_answer: "O'zgarmas qiymatni o'zlashtirish uchun",
   },
   {
-    question: "Keng katta soni belgilang?",
-    variants: ["12", "21", "15", "51"],
-    correctAnswer: "51",
+    number: 8,
+    question: 'JavaScriptda "===" operatori qanday ishlaydi?',
+    answers: [
+      "Tenglikni tekshirish uchun",
+      "Teng emasligni tekshirish uchun",
+      "Katta yoki tenglikni tekshirish uchun",
+      "Katta yoki tenglikni tekshirish uchun",
+    ],
+    correct_answer: "Tenglikni tekshirish uchun",
   },
   {
-    question: "Qushlarni toping?",
-    variants: ["Yaguar", "Laylak", "Toshbaqa", "Baliq"],
-    correctAnswer: "Laylak",
+    number: 9,
+    question: "JavaScriptda o'rtacha arifmetik amallar nima uchun ishlatiladi?",
+    answers: [
+      "Matnlarni yasash uchun",
+      "Raqamlar ustida arifmetik amallar bajarish uchun",
+      "Matnlarni almashtirish uchun",
+      "Kiritilgan matnni qatorlarga bo'lish uchun",
+    ],
+    correct_answer: "Raqamlar ustida arifmetik amallar bajarish uchun",
   },
   {
-    question: "Sonlarni toping?",
-    variants: ["Yaguar", "55", "Toshbaqa", "Baliq"],
-    correctAnswer: "55",
+    number: 10,
+    question: '"x += 5;" natijasi nima bo\'ladi?',
+    answers: [
+      "x ning qiymati 5 ga oshiriladi",
+      "x ni 5 ga bo'lgan yig'indisiga o'zlashtiradi",
+      "x ni 5 ga bo'lgan ko'paytmasiga o'zlashtiradi",
+      "x qiymatini 5 ga ko'paytiradi",
+    ],
+    correct_answer: "x ning qiymati 5 ga oshiriladi",
   },
   {
-    question: "Quyidagilardan qaysi biri insoniyat tomonidan yaratilgan ?",
-    variants: ["Yaguar", "Robit", "Toshbaqa", "Baliq"],
-    correctAnswer: "Robit",
+    number: 11,
+    question: "JavaScriptda nechta ma'lumot turi mavjud?",
+    answers: ["1 ta", "4 ta", "6 ta", "8 ta"],
+    correct_answer: "8 ta",
+  },
+  {
+    number: 12,
+    question: "JavaScriptda funksiya qanday yaratiladi?",
+    answers: [
+      "createFunction()",
+      "function myFunction()",
+      "new myFunction()",
+      "func => {}",
+    ],
+    correct_answer: "function myFunction()",
+  },
+  {
+    number: 13,
+    question: "JavaScript obyektlari qanday bo'ladi?",
+    answers: [
+      '{1: "one", 2: "two"}',
+      '["apple", "banana", "cherry"]',
+      "object.create()",
+      '{name: "John", age: 30}',
+    ],
+    correct_answer: '{name: "John", age: 30}',
+  },
+  {
+    number: 14,
+    question:
+      "JavaScriptda HTML elementlari qanday voqealar bilan bog'liq qilinadi?",
+    answers: [
+      "EventListeners orqali",
+      "CSS qo'shish orqali",
+      "JavaScriptda funksiyalar qo'shish orqali",
+      "event() bilan",
+    ],
+    correct_answer: "EventListeners orqali",
+  },
+  {
+    number: 15,
+    question: "JavaScriptda matnlar (strings) qanday ifodalanadi?",
+    answers: ["'Matn'", '"Matn"', "`Matn`", "Barchasi to'g'ri"],
+    correct_answer: "Barchasi to'g'ri",
+  },
+  {
+    number: 16,
+    question:
+      "JavaScriptda matnlar (strings) bilan ishlash uchun qaysi metodlar mavjud?",
+    answers: [
+      "push() va pop()",
+      "slice() va splice()",
+      "toUpperCase() va toLowerCase()",
+      "append() va remove()",
+    ],
+    correct_answer: "toUpperCase() va toLowerCase()",
+  },
+  {
+    number: 17,
+    question: "Matnda (string) qanday matn qidirish mumkin?",
+    answers: [
+      "search() va find()",
+      "search() va indexOf()",
+      "find() va findIndex()",
+      "search() va searchIndex()",
+    ],
+    correct_answer: "search() va indexOf()",
+  },
+  {
+    number: 18,
+    question:
+      "JavaScriptda funksional matn (functional strings) qanday yaratish mumkin?",
+    answers: [
+      "'Matn' qo'shish bilan",
+      '"Matn" qo\'shish bilan',
+      "`Matn` qo'shish bilan",
+      "/Matn/ qo'shish bilan",
+    ],
+    correct_answer: "`Matn` qo'shish bilan",
+  },
+  {
+    number: 19,
+    question: "JavaScriptda sonlar qanday ifodalaydilar?",
+    answers: ["1, 2, 3", '"1", "2", "3"', "1.0, 2.0, 3.0", "Barchasi to'g'ri"],
+    correct_answer: "Barchasi to'g'ri",
+  },
+  {
+    number: 20,
+    question: 'JavaScriptda "BigInt" nima uchun ishlatiladi?',
+    answers: [
+      "Uzoq matnlar (long strings) uchun",
+      "O'nlik sanoq tizimi (decimal system) sonlar uchun",
+      "Kattalik sonlar (large numbers) uchun",
+      "Darrovazaviy sonlar (hexadecimal numbers) uchun",
+    ],
+    correct_answer: "Kattalik sonlar (large numbers) uchun",
+  },
+  {
+    number: 21,
+    question: "JavaScriptda sonlar bilan ishlash uchun qanday metodlar mavjud?",
+    answers: [
+      "toNumber() va toString()",
+      "parseFloat() va parseInt()",
+      "toFixed() va toPrecision()",
+      "slice() va splice()",
+    ],
+    correct_answer: "parseFloat() va parseInt()",
+  },
+  {
+    number: 22,
+    question: 'JavaScriptda "Infinity" nima ifodalaydi?',
+    answers: [
+      "O'ng yonida bo'lib o'tkazilgan amal",
+      "Ayrimlari e'lon qilingan",
+      '"Sonsizlik"ni ifodalaydi',
+      "Agar narxi uzun bo'lsa",
+    ],
+    correct_answer: '"Sonsizlik"ni ifodalaydi',
+  },
+  {
+    number: 23,
+    question: "JavaScriptda massiv (array) qanday yaratiladi?",
+    answers: ["[1, 2, 3]", "{1, 2, 3}", "(1, 2, 3)", '"1, 2, 3"'],
+    correct_answer: "[1, 2, 3]",
+  },
+  {
+    number: 24,
+    question:
+      "JavaScriptda massivlarni qaysi metodlar orqali boshqarish mumkin?",
+    answers: [
+      "add() va remove()",
+      "push() va pop()",
+      "insert() va delete()",
+      "append() va clear()",
+    ],
+    correct_answer: "push() va pop()",
+  },
+  {
+    number: 25,
+    question: "JavaScriptda massivni qaysi metodlar orqali saralash mumkin?",
+    answers: [
+      "sort() va reverse()",
+      "add() va remove()",
+      "insert() va delete()",
+      "push() va pop()",
+    ],
+    correct_answer: "sort() va reverse()",
+  },
+  {
+    number: 26,
+    question:
+      "Massivni har bir elementi uchun qanday operatsiyalar bajarish mumkin?",
+    answers: [
+      "forEach() va every()",
+      "map() va filter()",
+      "add() va remove()",
+      "insert() va delete()",
+    ],
+    correct_answer: "map() va filter()",
+  },
+  {
+    number: 27,
+    question:
+      "JavaScriptda qanday massivni o'zgartirmasdan e'lon qilish mumkin?",
+    answers: [
+      'const colors = ["red", "green", "blue"];',
+      'var fruits = {"apple", "banana"};',
+      "let numbers = ()=> [1, 2, 3];",
+      "function getArray() { return [1, 2, 3]; }",
+    ],
+    correct_answer: 'const colors = ["red", "green", "blue"];',
+  },
+  {
+    number: 28,
+    question:
+      "JavaScriptda qaysi obyekt sana va vaqt bilan ishlash uchun ishlatiladi?",
+    answers: ["Date", "Time", "DateTime", "TimeSpan"],
+    correct_answer: "Date",
+  },
+  {
+    number: 29,
+    question: "JavaScriptda sanani qanday formatda ifodalash mumkin?",
+    answers: [
+      "Sana vaqt obyekti orqali",
+      "Matn (string) formatida",
+      "Raqam (number) formatida",
+      "Matn (string) va raqam (number) formatida",
+    ],
+    correct_answer: "Matn (string) formatida",
+  },
+  {
+    number: 30,
+    question: "JavaScriptda qanday sana vaqtni olish mumkin?",
+    answers: [
+      "getDate() va getTime()",
+      "setMonth() va setYear()",
+      "getHour() va getMinute()",
+      "getDay() va getYear()",
+    ],
+    correct_answer: "getDate() va getTime()",
+  },
+  {
+    number: 31,
+    question: "JavaScriptda qanday sana vaqtni sozlash mumkin?",
+    answers: [
+      "setMonth() va setYear()",
+      "setHour() va setMinute()",
+      "setSecond() va setMillisecond()",
+      "setDay() va setYear()",
+    ],
+    correct_answer: "setSecond() va setMillisecond()",
+  },
+  {
+    number: 32,
+    question: "JavaScriptda qanday matematik amallar bajarish mumkin?",
+    answers: [
+      "Math object orqali",
+      "Arifmetik operatorlar orqali",
+      "Sonlar obyekti bilan",
+      "Math va numbers",
+    ],
+    correct_answer: "Math object orqali",
+  },
+  {
+    number: 33,
+    question: "JavaScriptda tasodifiy sonlar qanday olish mumkin?",
+    answers: [
+      "Math.random()",
+      "Math.randint()",
+      "Math.randomNumber()",
+      "Random.number()",
+    ],
+    correct_answer: "Math.random()",
+  },
+  {
+    number: 34,
+    question: "JavaScriptda mantiqiy qiymatlar qanday ifodalaydi?",
+    answers: ["true va false", '"true" va "false"', "1 va 0", '"yes" va "no"'],
+    correct_answer: "true va false",
+  },
+  {
+    number: 35,
+    question: "JavaScriptda qanday taqqoslash amallari amalga oshiriladi?",
+    answers: ["<, >, <=, >=", "+, -, *, /", "==, ===, !=, !==", "&&, ||"],
+    correct_answer: "<, >, <=, >=",
+  },
+  {
+    number: 36,
+    question: "JavaScriptda shart operatorlari qanday ishlatiladi?",
+    answers: [
+      "if va else",
+      "when va otherwise",
+      "true va false",
+      "check va perform",
+    ],
+    correct_answer: "if va else",
+  },
+  {
+    number: 37,
+    question: 'JavaScriptda "switch" operatori qanday ishlaydi?',
+    answers: [
+      'Shartlar ketma-ketligini tekshiradi va mos "case" ni bajaradi',
+      "Shartni o'z ichiga oladi va bajaradi",
+      'Shartni tekshiradi va "if-else" ni bajaradi',
+      '"for" tsikl bilan birga ishlaydi',
+    ],
+    correct_answer:
+      'Shartlar ketma-ketligini tekshiradi va mos "case" ni bajaradi',
+  },
+  {
+    number: 38,
+    question:
+      'JavaScriptda qaysi tsikl operatori "for" bilan amalga oshiriladi?',
+    answers: [
+      "for tsikli",
+      "Shartni tekshirish tsikli",
+      "For-in tsikli",
+      "To'g'ri javoblar tsikli",
+    ],
+    correct_answer: "Qattiq tsikl",
+  },
+  {
+    number: 39,
+    question: '"for-in" tsikli qaysi ma\'lumot turlari bilan ishlayadi?',
+    answers: ["Massivlarni", "Qatorlarni", "Sonlarni", "Obyektlarni"],
+    correct_answer: "Massivlarni",
+  },
+  {
+    number: 40,
+    question: '"for-of" tsikli qanday ma\'lumot turlari bilan ishlayadi?',
+    answers: ["Massivlarni", "Qatorlarni", "Sonlarni", "Obyektlarni"],
+    correct_answer: "Massivlarni",
+  },
+  {
+    number: 41,
+    question:
+      'JavaScriptda qanday tsikl operatori "while" bilan amalga oshiriladi?',
+    answers: [
+      "while tsikl",
+      "for tsikl",
+      "Bir-marta tsikl",
+      "Massivlarni aylanish tsikli",
+    ],
+    correct_answer: "while tsikl",
+  },
+  {
+    number: 42,
+    question: '"break" operatori qanday ishlatiladi JavaScriptda?',
+    answers: [
+      "Tsiklni to'xtatish uchun",
+      "Obyektlarni o'z ichiga olish uchun",
+      "Yangi funktsiyani chaqirish uchun",
+      "Matnlar ustida ishlovchi",
+    ],
+    correct_answer: "Tsiklni to'xtatish uchun",
+  },
+  {
+    number: 43,
+    question: 'JavaScriptda qanday obyektlar "iterable" sifatida ishlaydilar?',
+    answers: ["Massivlar", "Sonlar", "Matnlar", "Ob'ekt turlari"],
+    correct_answer: "Massivlar",
+  },
+  {
+    number: 44,
+    question: 'JavaScriptda "Set" nima uchun ishlatiladi?',
+    answers: [
+      "Tasodifiy sonlar uchun",
+      "Tasodifiy obyektlar uchun",
+      "Bir hil bo'lmagan qiymatlarni saqlash uchun",
+      "Massivlarni to'plash uchun",
+    ],
+    correct_answer: "Bir hil bo'lmagan qiymatlarni saqlash uchun",
+  },
+  {
+    number: 45,
+    question: '"Map" nima uchun ishlatiladi JavaScriptda?',
+    answers: [
+      "Massivlarni saqlash uchun",
+      "Obyektlarni saqlash uchun",
+      "Tasodifiy sonlar uchun",
+      "Bir hil qiymatlarni saqlash uchun",
+    ],
+    correct_answer: "Obyektlarni saqlash uchun",
+  },
+  {
+    number: 46,
+    question: "JavaScriptda ma'lumot turlarini qanday tekshirish mumkin?",
+    answers: ["typeof", "typeof[]", "typeof{}", "type()"],
+    correct_answer: "typeof",
+  },
+  {
+    number: 47,
+    question: "JavaScriptda ma'lumot turlarini qanday o'zgartirish mumkin?",
+    answers: [
+      "Type Conversion orqali",
+      "Matn orqali",
+      "Son qo'shib",
+      "Obektga saqlab",
+    ],
+    correct_answer: "Type Conversion",
+  },
+  {
+    number: 48,
+    question:
+      "JavaScriptda qanday o'zgaruvchilarni bitwise amallar bilan bajarish mumkin?",
+    answers: [
+      '"&", "|", ">>"',
+      "+, -, *, /",
+      '"and", "or", "not"',
+      '"add", "subtract", "multiply"',
+    ],
+    correct_answer: '"&", "|", ">>"',
+  },
+  {
+    number: 49,
+    question: '"RegExp" JavaScriptda nima uchun ishlatiladi?',
+    answers: [
+      "Matnlar bilan ishlash uchun",
+      "Sonlar bilan ishlash uchun",
+      "Obyektlarni o'z ichiga olish uchun",
+      "Massivlarni yaratish uchun",
+    ],
+    correct_answer: "Matnlar bilan ishlash uchun",
+  },
+  {
+    number: 50,
+    question:
+      "JavaScript operatorlarining oldindan (precedence) nima uchun foydalaniladi?",
+    answers: [
+      "Obyektlarni chaqirish uchun",
+      "Operatorlar to'plamini yozish uchun",
+      "Operatorlar tashqi qavslarini yozish uchun",
+      "Operatorlar qo'shilishini belgilash uchun",
+    ],
+    correct_answer: "Operatorlar tashqi qavslarini yozish uchun",
+  },
+  {
+    number: 51,
+    question: "JavaScriptda xatolar qanday aniqlanadi?",
+    answers: [
+      "try-catch bloklari orqali",
+      "if-else operatorlari orqali",
+      "console.log() yordamida",
+      "switch operatori orqali",
+    ],
+    correct_answer: "try-catch bloklari orqali",
+  },
+  {
+    number: 52,
+    question: 'JavaScriptda "scope" (miqyos) qanday ishlaydi?',
+    answers: [
+      "O'zgaruvchilarni tizimli qilish uchun",
+      "O'zgaruvchilarni cheksiz o'zgartirish uchun",
+      "O'zgaruvchilarni o'z ichiga oladigan qavslar uchun",
+      "O'zgaruvchilarni o'z ichiga o'chirish uchun",
+    ],
+    correct_answer: "O'zgaruvchilarni o'z ichiga oladigan qavslar uchun",
+  },
+  {
+    number: 53,
+    question: 'JavaScriptda "hoisting" nima ma\'noni anglatadi?',
+    answers: [
+      "O'zgaruvchilarni o'chirish",
+      "Funksiyalarni yuqoriga ko'tarish",
+      "O'zgaruvchilarni tozalash",
+      "Funksiyalarni tozalash",
+    ],
+    correct_answer: "Funksiyalarni yuqoriga ko'tarish",
+  },
+  {
+    number: 54,
+    question: 'JavaScriptda "strict mode" nima uchun ishlatiladi?',
+    answers: [
+      "Xatolarni o'tkazmasdan ishlatish uchun",
+      "Kodni yozishni osonlashtirish uchun",
+      "Boshqa dasturlash tillariga o'tish uchun",
+      "Funksiyalar yaratish uchun",
+    ],
+    correct_answer: "Xatolarni o'tkazmasdan ishlatish uchun",
+  },
+  {
+    number: 55,
+    question: '"this" kaliti JavaScriptda qanday ishlaydi?',
+    answers: [
+      "Bitta tashqi `scope`ga murojaat etish uchun",
+      "Obyektlarni o'z ichiga olish uchun",
+      "Obyektlarni yaratish uchun",
+      "Funksiyalarni chaqirish uchun",
+    ],
+    correct_answer: "Bitta tashqi `scope`ga murojaat etish uchun",
+  },
+  {
+    number: 56,
+    question:
+      "JavaScriptda murojaat funksiyalari (arrow functions) qanday yaratiladi?",
+    answers: ["() => {}", "function => {}", "(function) => {}", "func() => {}"],
+    correct_answer: "() => {}",
   },
 ];
 
@@ -126,10 +626,10 @@ while (stopApp) {
             questions[n - 1].question +
             "\n" +
             "Javoblar " +
-            questions[n - 1].variants +
+            questions[n - 1].answers +
             "\n" +
             "To'g'ri javobi " +
-            questions[n - 1].correctAnswer
+            questions[n - 1].correct_answer
         );
       }
       // alert("Savollar ro'yxati: \n" + getQuestionsList(questions));
@@ -175,9 +675,11 @@ function randomisedQuestions(data) {
   let randomisedQuestionsSet = new Set();
   let randomised = [];
   let sttt = 0;
+  let countQuestions = data.length;
   here: while (true) {
-    let index = Math.floor(Math.random() * data.length);
-
+    console.log(data);
+    let index = Math.floor(Math.random() * countQuestions);
+    console.log(index);
     randomisedQuestionsSet.add(data[index]);
     sttt++;
     if (randomisedQuestionsSet.size == data.length) {
@@ -196,8 +698,8 @@ function startTest() {
   let counter = 0;
 
   for (let i = 0; i < randomised.length; i++) {
-    // console.log(Math.floor(Math.random() * randomised[i].variants.length));
-    let randomVariants = randomisedQuestions(randomised[i].variants);
+    // console.log(Math.floor(Math.random() * randomised[i].answers.length));
+    let randomVariants = randomisedQuestions(randomised[i].answers);
     console.log(randomVariants);
     let userAnswer = prompt(
       i +
@@ -271,11 +773,11 @@ function editTest(questions) {
   let editIndext = +prompt(questionsLest);
   questions[editIndext - 1] = {
     question: prompt("Savolni kiriting: ", questions[editIndext - 1].question),
-    variants: [
-      prompt("a) variantni kiriting: ", questions[editIndext - 1].variants[0]),
-      prompt("b) variantni kiriting: ", questions[editIndext - 1].variants[1]),
-      prompt("c) variantni kiriting: ", questions[editIndext - 1].variants[2]),
-      prompt("d) variantni kiriting: ", questions[editIndext - 1].variants[3]),
+    answers: [
+      prompt("a) variantni kiriting: ", questions[editIndext - 1].answers[0]),
+      prompt("b) variantni kiriting: ", questions[editIndext - 1].answers[1]),
+      prompt("c) variantni kiriting: ", questions[editIndext - 1].answers[2]),
+      prompt("d) variantni kiriting: ", questions[editIndext - 1].answers[3]),
     ],
     correctAnswer: prompt(
       "To'g'ri javobni kiriting",
@@ -310,7 +812,7 @@ function addTest(data) {
   const quizItem = {
     number: questions.length + 1,
     question: question,
-    variants: [a, b, c, d],
+    answers: [a, b, c, d],
     correctAnswer: correctAnswer,
   };
   questions.push(quizItem);
