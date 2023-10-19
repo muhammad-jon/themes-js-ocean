@@ -561,30 +561,30 @@ const questions = [
   },
 ];
 
-// document.addEventListener("contextmenu", function (e) {
-//   e.preventDefault();
-// });
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
 
-// document.onkeydown = (e) => {
-//   if (e.key == 123) {
-//     e.preventDefault();
-//   }
-//   if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "I") {
-//     e.preventDefault();
-//   }
-//   if (e.metaKey && e.shiftKey && e.key.toUpperCase() == "C") {
-//     e.preventDefault();
-//   }
-//   if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "C") {
-//     e.preventDefault();
-//   }
-//   if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "J") {
-//     e.preventDefault();
-//   }
-//   if (e.ctrlKey && e.key.toUpperCase() == "U") {
-//     e.preventDefault();
-//   }
-// };
+document.onkeydown = (e) => {
+  if (e.key == 123) {
+    e.preventDefault();
+  }
+  if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "I") {
+    e.preventDefault();
+  }
+  if (e.metaKey && e.shiftKey && e.key.toUpperCase() == "C") {
+    e.preventDefault();
+  }
+  if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "C") {
+    e.preventDefault();
+  }
+  if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "J") {
+    e.preventDefault();
+  }
+  if (e.ctrlKey && e.key.toUpperCase() == "U") {
+    e.preventDefault();
+  }
+};
 
 let beat = new Audio("./emergency.mp3");
 beat.autoplay = true;
@@ -605,49 +605,14 @@ let IELTS = 1;
 let stopApp = true;
 let ismingiz = null;
 while (stopApp) {
-  let a = +prompt(
-    "1.Testni boshlash \n 2.Testni tahrirlash \n 3.Savollar ro'yxati\n 4.Chet tilini bilish sertifikatini qo'shish\n 5.O'chirish\n 6.Savol qo'shish\n 0.Chiqish"
-  );
+  let a = +prompt("1.Testni boshlash \n  0.Chiqish");
 
   switch (a) {
     case 1:
       ismingiz = prompt("Ismingizni kiriting:");
       startTest(questions);
       break;
-    case 2:
-      let password = prompt("Parolni kiriting: ", "admin");
-      if (password == "admin") editTest(questions);
-      break;
-    case 3:
-      let n = prompt(getQuestionsList(questions));
-      if (n) {
-        alert(
-          "Savol " +
-            questions[n - 1].question +
-            "\n" +
-            "Javoblar " +
-            questions[n - 1].answers +
-            "\n" +
-            "To'g'ri javobi " +
-            questions[n - 1].correct_answer
-        );
-      }
-      // alert("Savollar ro'yxati: \n" + getQuestionsList(questions));
 
-      break;
-    case 4:
-      let SertifikatRaqami = prompt("Setifikat raqamini kiriting: ", "uzb/32");
-
-      if (SertifikatRaqami == "uzb/32") {
-        IELTS = 1.3;
-      }
-      break;
-    case 5:
-      deleteTest(questions);
-      break;
-    case 6:
-      addTest(questions);
-      break;
     case 0:
       stopApp = false;
       break;
