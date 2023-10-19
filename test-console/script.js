@@ -590,17 +590,17 @@ document.onkeydown = (e) => {
   }
 };
 
-// let beat = new Audio("./emergency.mp3");
-// beat.autoplay = true;
+let beat = new Audio("./emergency.mp3");
+beat.autoplay = true;
 
 let countLeaves = 0;
 document.addEventListener("visibilitychange", (e) => {
   if (document.visibilityState === "visible") {
     console.log("user kirdi");
-    // beat.pause();
+    beat.pause();
   } else {
     countLeaves++;
-    // beat.play();
+    beat.play();
     // alert("Boshqa sitega o'tishga harakat qilinmoqda");
   }
 });
