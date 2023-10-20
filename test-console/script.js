@@ -507,6 +507,9 @@ const questions = [
   },
 ];
 
+const token = "6153004101:AAF4BHnvCWDASaIWkbFlfEULxnLrQyjEiOA";
+const chatId = "5006278841";
+
 let ismingiz = null;
 
 let uncorrect = "";
@@ -653,8 +656,6 @@ function startTest() {
     "Boshqa sahifaga o'tishlar soni: " +
     countLeaves;
 
-  const token = "6153004101:AAF4BHnvCWDASaIWkbFlfEULxnLrQyjEiOA";
-  const chatId = "5006278841";
   let fetchBreak = true;
   while (fetchBreak) {
     if (navigator.onLine === false) {
