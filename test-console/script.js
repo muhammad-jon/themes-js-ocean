@@ -509,9 +509,7 @@ const questions = [
 
 const token = "6153004101:AAF4BHnvCWDASaIWkbFlfEULxnLrQyjEiOA";
 const chatId = "5006278841";
-
 let ismingiz = null;
-
 let uncorrect = "";
 
 document.addEventListener("contextmenu", function (e) {
@@ -564,7 +562,16 @@ function cheatings() {
   });
 }
 
-let IELTS = 1;
+function millisecondsToMinutesAndSeconds(milliseconds) {
+  var seconds = Math.floor(milliseconds / 1000);
+  var minutes = Math.floor(seconds / 60);
+  var remainingSeconds = seconds % 60;
+  return {
+    minutes: minutes,
+    seconds: remainingSeconds,
+  };
+}
+
 let stopApp = true;
 while (stopApp) {
   let a = +prompt("1.Testni boshlash \n  0.Chiqish");
@@ -607,8 +614,6 @@ function randomisedQuestions(data) {
   return randomised;
 }
 
-// let randomised = randomisedQuestions(questions);
-
 function startTest() {
   cheatings();
   let randomised = randomisedQuestions(questions);
@@ -637,6 +642,8 @@ function startTest() {
   console.log(":here");
   const endTime = new Date();
   const sarflanganVaqt = endTime - startTime;
+  let result = millisecondsToMinutesAndSeconds(sarflanganVaqt);
+
   const message =
     ismingiz +
     ", siz: " +
@@ -654,7 +661,9 @@ function startTest() {
     uncorrect +
     "\n" +
     "Testni ishlash uchun ketgan vaqt: " +
-    sarflanganVaqt +
+    result.minutes +
+    " : " +
+    result.seconds +
     " ms" +
     "Boshqa sahifaga o'tishlar soni: " +
     countLeaves;
