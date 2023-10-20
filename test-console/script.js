@@ -1,5 +1,3 @@
-"use strict";
-
 const questions = [
   {
     number: 1,
@@ -7,28 +5,17 @@ const questions = [
     answers: ["print()", "console.log()", "output()", "show()"],
     correct_answer: "console.log()",
   },
-  {
-    number: 2,
-    question:
-      "JavaScript dasturlash tili qanday qatorlar (statements) yordamida bajariladi?",
-    answers: [
-      "Ixtiyori kalit so'zlar bilan",
-      "E'tibor so'zlar bilan",
-      "Agar-shart operatori bilan",
-      "Qatorni yakunlaydigan nukta bilan",
-    ],
-    correct_answer: "E'tibor so'zlar bilan",
-  },
+
   {
     number: 3,
     question: "JavaScriptda dastur sintaksi qanday tuziladi?",
     answers: [
-      "Qattiq qoidalar bo'yicha",
+      "Qat'iy qoidalar bo'yicha",
       "So'zlar tuzilishi",
       "Qattiq ko'nikmalar",
       "Barchasi to'g'ri",
     ],
-    correct_answer: "Qattiq qoidalar bo'yicha",
+    correct_answer: "Qat'iy qoidalar bo'yicha",
   },
   {
     number: 4,
@@ -82,7 +69,8 @@ const questions = [
   },
   {
     number: 9,
-    question: "JavaScriptda o'rtacha arifmetik amallar nima uchun ishlatiladi?",
+    question:
+      "JavaScriptda o'rtacha arifmetik amallar (Math.round()) nima uchun ishlatiladi?",
     answers: [
       "Matnlarni yasash uchun",
       "Raqamlar ustida arifmetik amallar bajarish uchun",
@@ -133,7 +121,7 @@ const questions = [
   {
     number: 14,
     question:
-      "JavaScriptda HTML elementlari qanday voqealar bilan bog'liq qilinadi?",
+      "JavaScriptda HTML elementlari holatini qanday boshqarish mumkin?",
     answers: [
       "EventListeners orqali",
       "CSS qo'shish orqali",
@@ -162,7 +150,7 @@ const questions = [
   },
   {
     number: 17,
-    question: "Matnda (string) qanday matn qidirish mumkin?",
+    question: "Matn ichidan (string) qanday matn qidirish mumkin?",
     answers: [
       "search() va find()",
       "search() va indexOf()",
@@ -185,7 +173,7 @@ const questions = [
   },
   {
     number: 19,
-    question: "JavaScriptda sonlar qanday ifodalaydilar?",
+    question: "JavaScriptda sonlar qanday ifodalanadi?",
     answers: ["1, 2, 3", '"1", "2", "3"', "1.0, 2.0, 3.0", "Barchasi to'g'ri"],
     correct_answer: "Barchasi to'g'ri",
   },
@@ -193,7 +181,7 @@ const questions = [
     number: 20,
     question: 'JavaScriptda "BigInt" nima uchun ishlatiladi?',
     answers: [
-      "Uzoq matnlar (long strings) uchun",
+      "Uzun matnlar (long strings) uchun",
       "O'nlik sanoq tizimi (decimal system) sonlar uchun",
       "Kattalik sonlar (large numbers) uchun",
       "Darrovazaviy sonlar (hexadecimal numbers) uchun",
@@ -265,8 +253,7 @@ const questions = [
   },
   {
     number: 27,
-    question:
-      "JavaScriptda qanday massivni o'zgartirmasdan e'lon qilish mumkin?",
+    question: "JavaScriptda massivni o'zgarmas orqali e'lon qilish?",
     answers: [
       'const colors = ["red", "green", "blue"];',
       'var fruits = {"apple", "banana"};',
@@ -372,18 +359,7 @@ const questions = [
     correct_answer:
       'Shartlar ketma-ketligini tekshiradi va mos "case" ni bajaradi',
   },
-  {
-    number: 38,
-    question:
-      'JavaScriptda qaysi tsikl operatori "for" bilan amalga oshiriladi?',
-    answers: [
-      "for tsikli",
-      "Shartni tekshirish tsikli",
-      "For-in tsikli",
-      "To'g'ri javoblar tsikli",
-    ],
-    correct_answer: "Qattiq tsikl",
-  },
+
   {
     number: 39,
     question: '"for-in" tsikli qaysi ma\'lumot turlari bilan ishlayadi?',
@@ -396,18 +372,7 @@ const questions = [
     answers: ["Massivlarni", "Qatorlarni", "Sonlarni", "Obyektlarni"],
     correct_answer: "Massivlarni",
   },
-  {
-    number: 41,
-    question:
-      'JavaScriptda qanday tsikl operatori "while" bilan amalga oshiriladi?',
-    answers: [
-      "while tsikl",
-      "for tsikl",
-      "Bir-marta tsikl",
-      "Massivlarni aylanish tsikli",
-    ],
-    correct_answer: "while tsikl",
-  },
+
   {
     number: 42,
     question: '"break" operatori qanday ishlatiladi JavaScriptda?',
@@ -431,10 +396,10 @@ const questions = [
     answers: [
       "Tasodifiy sonlar uchun",
       "Tasodifiy obyektlar uchun",
-      "Bir hil bo'lmagan qiymatlarni saqlash uchun",
+      "Bir xil bo'lmagan qiymatlarni saqlash uchun",
       "Massivlarni to'plash uchun",
     ],
-    correct_answer: "Bir hil bo'lmagan qiymatlarni saqlash uchun",
+    correct_answer: "Bir xil bo'lmagan qiymatlarni saqlash uchun",
   },
   {
     number: 45,
@@ -487,40 +452,19 @@ const questions = [
     ],
     correct_answer: "Matnlar bilan ishlash uchun",
   },
-  {
-    number: 50,
-    question:
-      "JavaScript operatorlarining oldindan (precedence) nima uchun foydalaniladi?",
-    answers: [
-      "Obyektlarni chaqirish uchun",
-      "Operatorlar to'plamini yozish uchun",
-      "Operatorlar tashqi qavslarini yozish uchun",
-      "Operatorlar qo'shilishini belgilash uchun",
-    ],
-    correct_answer: "Operatorlar tashqi qavslarini yozish uchun",
-  },
-  {
-    number: 51,
-    question: "JavaScriptda xatolar qanday aniqlanadi?",
-    answers: [
-      "try-catch bloklari orqali",
-      "if-else operatorlari orqali",
-      "console.log() yordamida",
-      "switch operatori orqali",
-    ],
-    correct_answer: "try-catch bloklari orqali",
-  },
-  {
-    number: 52,
-    question: 'JavaScriptda "scope" (miqyos) qanday ishlaydi?',
-    answers: [
-      "O'zgaruvchilarni tizimli qilish uchun",
-      "O'zgaruvchilarni cheksiz o'zgartirish uchun",
-      "O'zgaruvchilarni o'z ichiga oladigan qavslar uchun",
-      "O'zgaruvchilarni o'z ichiga o'chirish uchun",
-    ],
-    correct_answer: "O'zgaruvchilarni o'z ichiga oladigan qavslar uchun",
-  },
+
+  // {
+  //   number: 51,
+  //   question: "JavaScriptda xatolar qanday aniqlanadi?",
+  //   answers: [
+  //     "try-catch bloklari orqali",
+  //     "if-else operatorlari orqali",
+  //     "console.log() yordamida",
+  //     "switch operatori orqali",
+  //   ],
+  //   correct_answer: "try-catch bloklari orqali",
+  // },
+
   {
     number: 53,
     question: 'JavaScriptda "hoisting" nima ma\'noni anglatadi?',
@@ -565,9 +509,9 @@ const questions = [
 
 let uncorrect = "";
 
-document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
-});
+// document.addEventListener("contextmenu", function (e) {
+//   e.preventDefault();
+// });
 
 document.onkeydown = (e) => {
   if (e.key == 123) {
@@ -590,27 +534,26 @@ document.onkeydown = (e) => {
   }
 };
 
-let beat = new Audio("./emergency.mp3");
-beat.autoplay = true;
+// let beat = new Audio("./emergency.mp3");
+// beat.autoplay = true;
 
-let countLeaves = 0;
-document.addEventListener("visibilitychange", (e) => {
-  if (document.visibilityState === "visible") {
-    console.log("user kirdi");
-    beat.pause();
-  } else {
-    countLeaves++;
-    beat.play();
-    // alert("Boshqa sitega o'tishga harakat qilinmoqda");
-  }
-});
+// let countLeaves = 0;
+// document.addEventListener("visibilitychange", (e) => {
+//   if (document.visibilityState === "visible") {
+//     console.log("user kirdi");
+//     beat.pause();
+//   } else {
+//     countLeaves++;
+//     beat.play();
+//     // alert("Boshqa sitega o'tishga harakat qilinmoqda");
+//   }
+// });
 
 let IELTS = 1;
 let stopApp = true;
 let ismingiz = null;
 while (stopApp) {
   let a = +prompt("1.Testni boshlash \n  0.Chiqish");
-  console.log("dsadsads");
   switch (a) {
     case 1:
       ismingiz = prompt("Ismingizni kiriting:");
@@ -668,10 +611,9 @@ function startTest() {
         toVariant(randomVariants).join("\n")
     );
     let n = userAnswer.toLowerCase().charCodeAt(0) - 97;
-    console.log(userAnswer.toLowerCase());
+
     if (randomVariants[n] == randomised[i].correct_answer) {
       ++counter;
-      console.log(counter);
     } else {
       uncorrect += randomised[i].number + ", ";
     }
@@ -687,11 +629,11 @@ function startTest() {
     " ta savolga to`g`ri javob berdingiz " +
     "\n" +
     "Siz testdan olgan ballingiz: " +
-    counter * 2.5 +
-    " ball" +
+    (counter * 100) / questions.length +
+    "% bajardingiz" +
     "\n" +
-    "Sizda mavjud imtiyoz indeksi: " +
-    IELTS +
+    " Test boshlangan vaqt: " +
+    startTime +
     "\n" +
     "Sizning noto'g'ri javoblaringiz: " +
     uncorrect +
@@ -700,17 +642,24 @@ function startTest() {
     sarflanganVaqt +
     " ms";
 
-  alert(message);
-
   const token = "6153004101:AAF4BHnvCWDASaIWkbFlfEULxnLrQyjEiOA";
   const chatId = "5006278841";
-
-  fetch(
-    `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`
-  )
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error(error));
+  let fetchBreak = true;
+  while (fetchBreak) {
+    if (navigator.onLine === false) {
+      alert("Internetingizni yoqing!!! va qaytadan urinib ko'ring");
+    } else {
+      fetch(
+        `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          alert(message);
+        })
+        .catch((error) => console.error(error));
+      fetchBreak = false;
+    }
+  }
 }
 
 function getQuestionsList(questions) {
