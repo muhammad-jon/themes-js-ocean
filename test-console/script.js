@@ -549,7 +549,7 @@ document.addEventListener("visibilitychange", (e) => {
     beat.pause();
   } else {
     countLeaves++;
-    let user = ismingiz + "boshqa sahifaga o'tdi";
+    let user = ismingiz + " boshqa sahifaga o'tdi";
     fetch(
       `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${user}`
     )
@@ -661,12 +661,13 @@ function startTest() {
     if (navigator.onLine === false) {
       alert("Internetingizni yoqing!!! va qaytadan urinib ko'ring");
     } else {
+      alert(message);
       fetch(
         `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`
       )
         .then((response) => response.json())
         .then((data) => {
-          alert(message);
+          console.log(message);
         })
         .catch((error) => console.error(error));
       fetchBreak = false;
