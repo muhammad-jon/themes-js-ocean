@@ -512,30 +512,30 @@ const chatId = "5006278841";
 let ismingiz = null;
 let uncorrect = "";
 
-document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
-});
+// document.addEventListener("contextmenu", function (e) {
+//   e.preventDefault();
+// });
 
-document.onkeydown = (e) => {
-  if (e.key == 123) {
-    e.preventDefault();
-  }
-  if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "I") {
-    e.preventDefault();
-  }
-  if (e.metaKey && e.shiftKey && e.key.toUpperCase() == "C") {
-    e.preventDefault();
-  }
-  if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "C") {
-    e.preventDefault();
-  }
-  if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "J") {
-    e.preventDefault();
-  }
-  if (e.ctrlKey && e.key.toUpperCase() == "U") {
-    e.preventDefault();
-  }
-};
+// document.onkeydown = (e) => {
+//   if (e.key == 123) {
+//     e.preventDefault();
+//   }
+//   if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "I") {
+//     e.preventDefault();
+//   }
+//   if (e.metaKey && e.shiftKey && e.key.toUpperCase() == "C") {
+//     e.preventDefault();
+//   }
+//   if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "C") {
+//     e.preventDefault();
+//   }
+//   if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "J") {
+//     e.preventDefault();
+//   }
+//   if (e.ctrlKey && e.key.toUpperCase() == "U") {
+//     e.preventDefault();
+//   }
+// };
 
 let beat = new Audio("./emergency.mp3");
 beat.autoplay = true;
@@ -620,7 +620,7 @@ function startTest() {
   const startTime = new Date();
   let counter = 0;
 
-  for (let i = 0; i < randomised.length; i++) {
+  for (let i = 0; i < questions.length; i++) {
     let randomVariants = randomisedQuestions(randomised[i].answers);
     let userAnswer = prompt(
       i +
@@ -643,29 +643,23 @@ function startTest() {
   const endTime = new Date();
   const sarflanganVaqt = endTime - startTime;
   let result = millisecondsToMinutesAndSeconds(sarflanganVaqt);
-
   const message =
+    "🙎‍♂️ Name: " +
     ismingiz +
-    ", siz: " +
+    "\n✅ Correct answers: " +
     counter +
-    " ta savolga to`g`ri javob berdingiz " +
-    "\n" +
-    "Siz testdan olgan ballingiz: " +
+    "\n📈 Your result: " +
     (counter * 100) / questions.length +
-    "% bajardingiz" +
-    "\n" +
-    " Test boshlangan vaqt: " +
+    "\n⏳ Start time: " +
     startTime +
-    "\n" +
-    "Sizning noto'g'ri javoblaringiz: " +
+    "\n❌ Uncorrect answers: " +
     uncorrect +
-    "\n" +
-    "Testni ishlash uchun ketgan vaqt: " +
+    "\n⏰ Time left: " +
     result.minutes +
     " : " +
     result.seconds +
-    " ms" +
-    "Boshqa sahifaga o'tishlar soni: " +
+    " s" +
+    "\n🚪 Leaves from page: " +
     countLeaves;
 
   let fetchBreak = true;
@@ -675,7 +669,9 @@ function startTest() {
     } else {
       alert(message);
       fetch(
-        `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`
+        `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
+          message
+        )}`
       )
         .then((response) => response.json())
         .then((data) => {
