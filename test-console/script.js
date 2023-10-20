@@ -543,24 +543,26 @@ let beat = new Audio("./emergency.mp3");
 beat.autoplay = true;
 
 let countLeaves = 0;
-document.addEventListener("visibilitychange", (e) => {
-  if (document.visibilityState === "visible") {
-    console.log("user kirdi");
-    beat.pause();
-  } else {
-    countLeaves++;
-    let user = ismingiz + " boshqa sahifaga o'tdi";
-    fetch(
-      `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${user}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => console.error(error));
-    beat.play();
-  }
-});
+function cheatings() {
+  document.addEventListener("visibilitychange", (e) => {
+    if (document.visibilityState === "visible") {
+      console.log("user kirdi");
+      beat.pause();
+    } else {
+      countLeaves++;
+      let user = ismingiz + " boshqa sahifaga o'tdi";
+      fetch(
+        `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${user}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => console.error(error));
+      beat.play();
+    }
+  });
+}
 
 let IELTS = 1;
 let stopApp = true;
@@ -608,6 +610,7 @@ function randomisedQuestions(data) {
 // let randomised = randomisedQuestions(questions);
 
 function startTest() {
+  cheatings();
   let randomised = randomisedQuestions(questions);
   const startTime = new Date();
   let counter = 0;
