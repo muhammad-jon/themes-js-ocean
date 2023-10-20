@@ -507,11 +507,13 @@ const questions = [
   },
 ];
 
+let ismingiz = null;
+
 let uncorrect = "";
 
-// document.addEventListener("contextmenu", function (e) {
-//   e.preventDefault();
-// });
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
 
 document.onkeydown = (e) => {
   if (e.key == 123) {
@@ -534,24 +536,31 @@ document.onkeydown = (e) => {
   }
 };
 
-// let beat = new Audio("./emergency.mp3");
-// beat.autoplay = true;
+let beat = new Audio("./emergency.mp3");
+beat.autoplay = true;
 
-// let countLeaves = 0;
-// document.addEventListener("visibilitychange", (e) => {
-//   if (document.visibilityState === "visible") {
-//     console.log("user kirdi");
-//     beat.pause();
-//   } else {
-//     countLeaves++;
-//     beat.play();
-//     // alert("Boshqa sitega o'tishga harakat qilinmoqda");
-//   }
-// });
+let countLeaves = 0;
+document.addEventListener("visibilitychange", (e) => {
+  if (document.visibilityState === "visible") {
+    console.log("user kirdi");
+    beat.pause();
+  } else {
+    countLeaves++;
+    let user = ismingiz + "boshqa sahifaga o'tdi";
+    fetch(
+      `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${user}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => console.error(error));
+    beat.play();
+  }
+});
 
 let IELTS = 1;
 let stopApp = true;
-let ismingiz = null;
 while (stopApp) {
   let a = +prompt("1.Testni boshlash \n  0.Chiqish");
   switch (a) {
@@ -640,7 +649,9 @@ function startTest() {
     "\n" +
     "Testni ishlash uchun ketgan vaqt: " +
     sarflanganVaqt +
-    " ms";
+    " ms" +
+    "Boshqa sahifaga o'tishlar soni: " +
+    countLeaves;
 
   const token = "6153004101:AAF4BHnvCWDASaIWkbFlfEULxnLrQyjEiOA";
   const chatId = "5006278841";
