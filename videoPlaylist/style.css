@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Playpen Sans", cursive;
+}
+.input_group {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input_group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid lightgray;
+}
+.input_group button {
+  cursor: pointer;
+  width: 150px;
+  padding: 0.5rem;
+  border: 1px solid lightgray;
+}
+.input_group button:active {
+  background-color: lightgray;
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  padding: 0 1rem;
+}
+
+@media screen and (max-width: 670px) {
+  .videos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 400px) {
+  .videos {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

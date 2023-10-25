@@ -512,30 +512,30 @@ const chatId = "5006278841";
 let ismingiz = null;
 let uncorrect = "";
 
-document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
-});
+// document.addEventListener("contextmenu", function (e) {
+//   e.preventDefault();
+// });
 
-document.onkeydown = (e) => {
-  if (e.key == 123) {
-    e.preventDefault();
-  }
-  if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "I") {
-    e.preventDefault();
-  }
-  if (e.metaKey && e.shiftKey && e.key.toUpperCase() == "C") {
-    e.preventDefault();
-  }
-  if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "C") {
-    e.preventDefault();
-  }
-  if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "J") {
-    e.preventDefault();
-  }
-  if (e.ctrlKey && e.key.toUpperCase() == "U") {
-    e.preventDefault();
-  }
-};
+// document.onkeydown = (e) => {
+//   if (e.key == 123) {
+//     e.preventDefault();
+//   }
+//   if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "I") {
+//     e.preventDefault();
+//   }
+//   if (e.metaKey && e.shiftKey && e.key.toUpperCase() == "C") {
+//     e.preventDefault();
+//   }
+//   if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "C") {
+//     e.preventDefault();
+//   }
+//   if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() == "J") {
+//     e.preventDefault();
+//   }
+//   if (e.ctrlKey && e.key.toUpperCase() == "U") {
+//     e.preventDefault();
+//   }
+// };
 
 let beat = new Audio("./emergency.mp3");
 beat.autoplay = true;
