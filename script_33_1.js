@@ -88,14 +88,43 @@
 // console.log(str);
 // console.log(str2);
 
-let arr = [12, 32, 4, 32, 42, 34, 234];
-let arr2 = JSON.parse(JSON.stringify(arr));
+// let arr = [12, 32, 4, 32, 42, 34, 234];
+// let arr2 = JSON.parse(JSON.stringify(arr));
 
-console.log(arr);
-console.log(arr2);
+// console.log(arr);
+// console.log(arr2);
 
-arr2[2] = 23456;
+// arr2[2] = 23456;
+// console.log("after");
+
+// console.log(arr);
+// console.log(arr2);
+
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+let obj = { age: 45, name: "John", surname: "Doel" };
+
+////1-usul
+// let obj2 = JSON.parse(JSON.stringify(obj)); //1-usul
+
+////2-usul
+// for orqali aylanib har birini boshqa objayga push qilaizm
+
+////3-usul
+let obj2 = obj;
+
+console.log("obj: ", obj);
+console.log("obj2: ", obj2);
+
+obj2["age"] = 23478;
+
 console.log("after");
 
-console.log(arr);
-console.log(arr2);
+console.log("obj: ", obj);
+console.log("obj2: ", obj2);
+
+//////////////////////////////////////////

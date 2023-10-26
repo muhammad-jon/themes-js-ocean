@@ -4,7 +4,8 @@ let playlist = [];
 
 // https://www.youtube.com/watch?v=Bl1FOKpFY2Q
 
-<iframe
+{
+  /* <iframe
   width="1424"
   height="646"
   src="https://www.youtube.com/embed/Bl1FOKpFY2Q"
@@ -12,7 +13,8 @@ let playlist = [];
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   allowfullscreen
-></iframe>;
+></iframe>; */
+}
 
 // localStorage.getItem(playlistName);
 
@@ -51,6 +53,7 @@ clear.addEventListener("click", () => {
 function outToUi(videos) {
   document.getElementById("videos").innerHTML = "";
   playlist.map((el) => {
+    getVideoName(el);
     document.getElementById("videos").innerHTML += `<div>
       <iframe
         width="100%"
@@ -60,7 +63,9 @@ function outToUi(videos) {
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
-      ></iframe></div>`;
+      ></iframe>
+      <div id=${el}></div>
+      </div>`;
   });
 }
 

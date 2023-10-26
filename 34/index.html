@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="buBodyId">
+    <input id="input" class="cladfsd" type="text">
+    <style>
+        /* styles rely on the custom attribute "order-state" */
+        .order[order-state="new"] {
+            color: green;
+        }
+
+        .order[order-state="pending"] {
+            color: blue;
+        }
+
+        .order[order-state="canceled"] {
+            color: red;
+        }
+    </style>
+
+
+    <div id="order" data-order-state="new">
+        A canceled order.
+    </div>
+
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" class="active"
+        aria-current="true" <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+        class="active" aria-current="true" aria-label="Slide 1">Hello</button>
+    <script>
+        function go(a) {
+
+        }
+
+        document.querySelector("button").addEventListener('click', function (el) {
+            console.log();
+            let slideIndex = this.getAttribute("data-bs-slide-to");
+            go(slideIndex)
+        })
+
+        // console.log(order.outerHTML);
+
+        // console.log(order.dataset.orderState);
+        // order.dataset.orderState = "kutilyapti"
+        // console.log(order.outerHTML);
+        // input.id = "fsdfsd"
+        // console.log(fsdfsd.outerHTML);
+
+
+
+        // console.log(input.attributes[0]);
+        // console.log(input.getAttribute(input.attributes[1].name));
+
+
+
+        // input.setAttribute('TEST', 123); // (2), writing
+
+        // console.log(typeof input.getAttribute("test"));
+
+        // console.log(input.outerHTML);
+
+
+        // let input = document.querySelector("input")
+        // input.setAttribute("id", "kiritish");
+
+        // // // input.removeAttribute("id")
+        // console.log(input.id);
+
+        // console.log(document.body.id);
+
+        // console.log("here");
+    </script>
+</body>
+
+</html>

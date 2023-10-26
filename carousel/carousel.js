@@ -52,10 +52,13 @@ for (let index = 0; index < data.length; index++) {
 
   let button = document.createElement("span");
   button.classList.add("carousel-indicator-button");
+  button.setAttribute("data-slide-to", index);
+
   button.textContent = index + 1;
   button.onclick = function () {
-    currentInd(index);
-    currentSlide = index;
+    let slideIndex = this.getAttribute("Data-Slide-To");
+    currentInd(slideIndex);
+    currentSlide = slideIndex;
   };
   buttons.appendChild(button);
 }
