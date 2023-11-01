@@ -182,7 +182,7 @@ class Ebook extends Books {
 }
 
 let book1 = new Ebook("Said ahmad", "Ufq romani", "1964-1974", 5.1, 5000);
-book1.Info();
+// book1.Info();
 
 class paperBook extends Books {
   constructor(author, name, year, muqovasi, ogirligi, tarjimasi) {
@@ -211,7 +211,7 @@ let paperBook1 = new paperBook(
   120,
   "iskandar iroglaflari"
 );
-paperBook1.Info();
+// paperBook1.Info();
 `
 // let obj = {
 //   author: "Makedonskiy Aleksandr",
@@ -247,3 +247,106 @@ paperBook1.Info();
 // let dog1 = new Dog("Tuzik", 4, "woff");
 
 // dog1.makeSound();
+
+`;
+
+// {
+//   function foo() {
+//     console.log("function works");
+//   }
+// }
+// foo();
+
+// foo();
+// {
+//   function foo() {
+//     console.log("function works");
+//   }
+// }
+
+// console.log("here");
+
+function makeCounter() {
+  let count = 0;
+
+  function counter() {
+    return ++count;
+  }
+
+  makeCounter.set = function (son) {
+    count = son;
+  };
+  makeCounter.decrease = function () {
+    count--;
+  };
+
+  return counter;
+}
+
+// let counter = makeCounter();
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// makeCounter.set(54);
+// console.log(counter());
+// makeCounter.decrease();
+// makeCounter.decrease();
+// makeCounter.decrease();
+
+// console.log(counter());
+
+// let foo = new Function("a", "b", "c", `let k = (a + b) / c; return k;`);
+// console.log(foo(3, 9, 3));
+
+// function foo(a, b, c) {
+//   let k = (a + b) / c;
+//   return k;
+// }
+
+// let foo = function (a, b, c) {
+//   let k = (a + b) / c;
+//   return k;
+// };
+
+// let foo = (a, b, c) => {
+//   let k = (a + b) / c;
+//   return k;
+// };
+
+// function foo(name) {
+//   console.log("5 sekund vaqt o'tdi,", name, "chat o'chirildi");
+// }
+
+// let k; // setTimeoutni ID sini saqlash uchun o'zgaruvchi
+
+// k = setTimeout(() => {
+//   foo("Muhammad");
+// }, 1000 * 5);
+
+// // clearTimeout(k); // ID si k ga teng bo'lgan SetTimeoutni to'xtatish
+
+// console.log("tugadi");
+// let counter = 0;
+
+// let id = setInterval(foo, 1000);
+
+// function foo() {
+//   counter++;
+//   console.log("Funksiya chaqirildi", counter);
+//   if (counter == 5) {
+//     clearInterval(id);
+//   }
+// }
+
+// sekundamer
+
+function greeting(name, callback) {
+  console.log("Assalomu alaykum " + name);
+  callback(name);
+}
+
+function sayBye(name) {
+  consoe.log("Xayr " + name);
+}
+
+greeting("Ali", sayBye);
