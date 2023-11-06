@@ -93,3 +93,25 @@
 // });
 
 let btn = document.getElementById("#btn");
+
+function changeSerif() {
+  let all = document.querySelectorAll("*");
+  for (let index = 0; index < all.length; index++) {
+    all[index].style.fontFamily = "Lora, serif";
+  }
+}
+
+function changeSansSerif() {
+  let all = document.querySelectorAll("*");
+  for (let index = 0; index < all.length; index++) {
+    all[index].style.fontFamily = "Inter, serif";
+  }
+}
+
+if (value == "serif") {
+  changeSansSerif();
+}
+
+if (value == "sans-serif") {
+  changeSansSerif();
+}
