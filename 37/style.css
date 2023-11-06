@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Courier New", Courier, monospace; */
+}
+.timer_card {
+  max-width: 579px;
+  max-height: 270px;
+  border-radius: 40px;
+  border-radius: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(144deg, #28272f 9.13%, #040404 62.89%);
+  box-shadow: 0px 0px 24px 0px rgba(255, 255, 255, 0.4);
+
+  font-size: 88px;
+  color: white;
+  padding: 37px 67px;
+}
+
+body {
+  background-color: black;
+}
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 121px;
+}
+.control_btns {
+  display: flex;
+  align-items: center;
+  gap: 31px;
+}
+
+.control_btns button {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 23px 85px;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(144deg, #28272f 9.13%, #040404 62.89%);
+  box-shadow: 0px 3px 0px rgb(38, 38, 38);
+  transition: all 0.1s;
+}
+.control_btns button:active {
+  box-shadow: 0px 0px 0px rgb(38, 38, 38);
+  transform: translateY(3px);
+}
+
+button:disabled {
+  color: rgb(103, 103, 103);
+  cursor: not-allowed;
+}
+.timer_card {
+  position: relative;
+}
+.timer_card::after {
+  top: -5px;
+  left: -5px;
+  position: absolute;
+  content: "";
+  background: linear-gradient(red, transparent),
+    linear-gradient(to top left, lime, transparent),
+    linear-gradient(to top right, blue, transparent);
+  animation: round 1s linear 0 infinite alternate;
+  background-blend-mode: screen;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  position: absolute;
+  z-index: -1;
+}
+@keyframes round {
+  from {
+    background: linear-gradient(red, transparent),
+      linear-gradient(to top left, lime, transparent),
+      linear-gradient(to top right, blue, transparent);
+  }
+  to {
+    background: linear-gradient(red, transparent),
+      linear-gradient(to bottom right, lime, transparent),
+      linear-gradient(to bottom left, blue, transparent);
+  }
+}
+
+.timer_card::after {
+  filter: blur(20px);
+}
