@@ -13,17 +13,35 @@
         height: 60px;
         font-size: 24px;
     }
+
+    body.serif * {
+        font-family: "Loro", serif;
+    }
+
+    body.sans-serif * {
+        font-family: "Inter", sans-serif;
+    }
+
+    body.mono * {
+        font-family: monospace;
+    }
 </style>
 
-<body>
+<body class="sans-serif ">
 
     <select name="fontfamily" id="fontfamily">
         <option value="serif">Serif</option>
         <option value="sans-serif">Sans - Serif</option>
         <option value="mono">Mono</option>
     </select>
-    <button onclick="" ondblclick="" onmouseenter="" onmouseout="" id="btn">Click me</button>
+    <button id="btn">Click me</button>
     <script src="./script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap"
+        rel="stylesheet">
+
 </body>
 
 </html>

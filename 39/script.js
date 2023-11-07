@@ -92,7 +92,7 @@
 //   btn.style.background = "yellow";
 // });
 
-let btn = document.getElementById("#btn");
+let btn = document.getElementById("btn");
 
 function changeSerif() {
   let all = document.querySelectorAll("*");
@@ -108,10 +108,27 @@ function changeSansSerif() {
   }
 }
 
-if (value == "serif") {
-  changeSansSerif();
-}
+// if (value == "serif") {
+//   changeSansSerif();
+// }
 
-if (value == "sans-serif") {
-  changeSansSerif();
-}
+// if (value == "sans-serif") {
+//   changeSansSerif();
+// }
+
+fontfamily.addEventListener("change", (event) => {
+  console.log(event.target.value);
+  document.body.className = "";
+  document.body.classList.add(event.target.value);
+});
+
+let langEng = {
+  btnText: "Click me",
+};
+
+let langUz = {
+  btnText: "Meni bos",
+};
+
+console.log();
+btn.innerText = langEng.btnText;

@@ -1,0 +1,7 @@
+button:active {
+  transform: scale(0.8);
+}
+
+.dNone {
+  display: none;
+}
