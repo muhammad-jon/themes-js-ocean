@@ -43,8 +43,22 @@ root.appendChild(btn);
 
 //mouseenter, mouseover, mousemove, mouseout, mouseleave, click, dblclick,
 
-btn.addEventListener("dblclick", () => {
-  header.classList.toggle("dNone"); // bor bo'lsa o'chirish, bo'lmasa qo'shish
-  //   header.classList.add("dNone"); // qo'shish
-  //   header.classList.remove("dNone"); // o'chirish
-});
+// btn.addEventListener("dblclick", () => {
+//   header.classList.toggle("dNone"); // bor bo'lsa o'chirish, bo'lmasa qo'shish
+//   //   header.classList.add("dNone"); // qo'shish
+//   //   header.classList.remove("dNone"); // o'chirish
+// });
+
+const mediaQuery = window.matchMedia("(max-width: 400px)");
+
+function handleTabletChange(e) {
+  console.log(e);
+
+  if (e.matches) {
+    console.log("Media Query Matched!");
+    // media stylelar shu yerga yoziladi
+  }
+}
+mediaQuery.addEventListener("change", handleTabletChange);
+
+handleTabletChange(mediaQuery);
