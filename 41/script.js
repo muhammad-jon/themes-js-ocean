@@ -96,22 +96,46 @@
 
 // myDisplay();
 
-async function fetchMovies() {
-  const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+// async function fetchMovies() {
+//   const response = await fetch("https://jsonplaceholder.typicode.com/todos");
 
-  console.log(response.ok);
-  console.log(response.status);
+//   console.log(response.ok);
+//   console.log(response.status);
 
-  const data = await response.json();
-  return data;
-}
+//   const data = await response.json();
+//   return data;
+// }
 
-fetchMovies().then((data) => {
-  for (let i = 0; i < data.length; i++) {
-    console.log(data[i]);
-  }
-});
+// fetchMovies().then((data) => {
+//   for (let i = 0; i < data.length; i++) {
+//     console.log(data[i]);
+//   }
+// });
 
 // fetch("https://jsonplaceholder.typicode.com/todos")
 //   .then((res) => res.json())
 //   .then((data) => console.log(data));
+
+const url = "https://url-shortener-service.p.rapidapi.com/shorten";
+const options = {
+  method: "POST",
+  headers: {
+    "content-type": "application/x-www-form-urlencoded",
+    "X-RapidAPI-Key": "01be257534msh781515b212f94d6p1ebcacjsn9e7080983ffd",
+    "X-RapidAPI-Host": "url-shortener-service.p.rapidapi.com",
+  },
+  body: new URLSearchParams({
+    url: "https://google.com/",
+  }),
+};
+async function foo() {
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    console.log(result.result_url);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+foo();

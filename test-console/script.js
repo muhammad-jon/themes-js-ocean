@@ -507,8 +507,8 @@ const questions = [
   },
 ];
 
-const token = "6153004101:AAF4BHnvCWDASaIWkbFlfEULxnLrQyjEiOA";
-const chatId = "5006278841";
+const token = "{bot_token}";
+const chatId = "{chat_id}";
 let ismingiz = null;
 let uncorrect = "";
 
