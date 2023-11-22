@@ -1,0 +1,13 @@
+body.night {
+  background-color: black;
+  color: white;
+}
+
+.none {
+  display: none;
+}
+
+body.night .btn {
+  border-color: white;
+  color: white;
+}
